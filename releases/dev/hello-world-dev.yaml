@@ -13,7 +13,7 @@ spec:
     path: chart
     ref: master
   values:
-    replicaCount: 3
+    replicaCount: 1
     image:
       repository: registry.cloud.okteto.net/hbstarjason/hello-world
       tag: 1.0.1
