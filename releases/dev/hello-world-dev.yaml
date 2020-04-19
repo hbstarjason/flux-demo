@@ -1,0 +1,22 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: zhang
+  namespace: hbstarjason
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: "semver:*"
+spec:
+  releaseName: zhang
+  chart:
+    git: git@github.com:hbstarjason/flux-getting-started
+    path: chart
+    ref: master
+  values:
+    replicaCount: 3
+    image:
+      repository: registry.cloud.okteto.net/hbstarjason/hello-world
+      tag: 1.0.1
+
+# okteto build -t registry.cloud.okteto.net/hbstarjason/hello-world:1.0.0 .
+# okteto build -t registry.cloud.okteto.net/hbstarjason/hello-world:1.0.1 .
