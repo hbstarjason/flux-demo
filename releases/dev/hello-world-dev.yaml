@@ -9,7 +9,7 @@ metadata:
 spec:
   releaseName: zhang
   chart:
-    git: git@github.com:hbstarjason/flux-getting-started
+    git: git@github.com:hbstarjason/flux-demo
     path: chart
     ref: master
   values:
